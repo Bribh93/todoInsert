@@ -1,0 +1,96 @@
+@import "tailwindcss";
+@import '@flaticon/flaticon-uicons/css/all/all';
+
+  
+  @layer base {
+    /* ===== Reset básico ===== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ===== Tipografía y fondo global ===== */
+    html {
+      scroll-behavior: smooth;
+      font-size: 14px; /* tamaño base para móviles */
+    }
+
+    body {
+      /* font-family: 'Inter', sans-serif; */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: #0f172a; /* bg-gray-900 */
+      color: #f8fafc; /* text-slate-50 */
+    }
+
+    /* ===== Transiciones suaves para todo ===== */
+    * {
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+
+    /* ===== Scrollbar global (green-500) ===== */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #22c55e; /* green-500 */
+      border-radius: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    /* Firefox */
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: #22c55e transparent;
+    }
+
+    /* ===== Enfocar elementos accesibles ===== */
+    :focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #22c55e;
+    }
+
+    /* ===== Imágenes fluidas con bordes suaves ===== */
+    img {
+      border-radius: 0.5rem; /* rounded-md */
+      object-fit: cover;
+      max-width: 100%;
+      height: auto;
+    }
+    /* Transición de páginas */
+    /* Transición de páginas */
+    .page-transition {
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeInUp 0.5s ease forwards;
+    }
+
+    /* Animación suave al cambiar de vista */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @media (min-width: 768px) {
+      html {
+        font-size: 16px; /* tablets (iPad) */
+      }
+    }
+
+  @media (min-width: 1024px) {
+    html {
+      font-size: 18px; /* escritorio */
+    }
+  }
+  }
