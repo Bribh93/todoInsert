@@ -6,7 +6,7 @@ import Register from "./pages/Register";
 import Wrapper from "./pages/Wrapper";
 import Layout from "./pages/Layout";
 import Documents from "./pages/Documents";
-import CssPage from "./pages/Csspage";
+import CssPage from "./pages/CssPage";
 import HtmlPage from "./pages/htmlPage";
 import ReactPage from "./pages/ReactPage";
 import JsPage from "./pages/JsPage";
