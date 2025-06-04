@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="page-transition bg-gray-500 dark:bg-black/40 text-gray-300 w-full rounded-tl-[50px] rounded-tr-[50px] pt-10 pb-10 md:pt-20 px-5 sm:px-10 lg:px-20 mt-32">
+    <footer className=" page-transition bg-gray-500 dark:bg-black/40 text-gray-300 w-full rounded-tl-[50px] rounded-tr-[50px] pt-10 pb-10 md:pt-20 px-5 sm:px-10 lg:px-20 mt-32">
       <section className="flex flex-col lg:flex-row lgitems-start lg:justify-between gap-x-32 gap-y-10">
         <section>
           <h2 className="text-2xl font-semibold mb-5">Tech Wave</h2>
@@ -45,14 +45,14 @@ const Footer = () => {
             </li>
           </ul>
           <hr className="my-8 max-w-xs border border-border" />
-          <p className="max-w-sm text-muted-foreground">
+          <p className="max-w-sm text-muted-foreground hidden md:block">
             Selling premium products, designed to elevate your everyday
             experience.
           </p>
         </section>
-        <section className="flex-1">
-          <ul className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-y-10">
-            <li>
+        <section className="flex-1 ">
+          <ul className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-y-10 ">
+            <li className="hidden md:block">
               <h5 className="uppercase font-light tracking-widest mb-5">
                 Menu
               </h5>
@@ -91,11 +91,11 @@ const Footer = () => {
                 </li>
               </ul>
             </li>
-            <li>
+            <li className="hidden md:block">
               <h5 className="uppercase font-light tracking-widest mb-5">
                 Utility pages
               </h5>
-              <ul className="space-y-5">
+              <ul className="space-y-5 ">
                 <li>
                   <Link
                     href="#"
