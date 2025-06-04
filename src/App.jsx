@@ -7,7 +7,7 @@ import Wrapper from "./pages/Wrapper";
 import Layout from "./pages/Layout";
 import Documents from "./pages/Documents";
 import CssPage from "./pages/CssPage";
-import HtmlPage from "./pages/htmlPage";
+import HtmlPage from "./pages/HtmlPage";
 import ReactPage from "./pages/ReactPage";
 import JsPage from "./pages/JsPage";
 import SupabasePage from "./pages/SupabasePage";
