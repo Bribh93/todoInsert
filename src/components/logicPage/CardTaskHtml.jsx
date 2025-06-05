@@ -69,7 +69,7 @@ const CardTaskHtml = () => {
           {codetask.map((codetasks) => (
             <div
               key={codetasks.id}
-              className=" max-w-2xl mx-auto py-4 px-6 rounded-lg shadow-xl md:hover:shadow-orange-600/50 shadow-orange-600/10 mb-16 relative md:hover:scale-105 transform transition duration-300"
+              className=" max-w-2xl mx-auto py-4 px-6 rounded-lg shadow-xl md:hover:shadow-orange-600/50 shadow-orange-600/10 mb-16 relative md:hover:scale-95 transform transition duration-300"
             >
               <div className="flex items-center justify-between ">
                 <time className="text-sm text-muted-foreground">

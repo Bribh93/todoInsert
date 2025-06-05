@@ -2,9 +2,30 @@ import clsx from "clsx";
 import { Link } from "react-router-dom";
 import supabase from "../helpers/supabaseClient";
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const SideBar = ({ isOpen, onClose }) => {
   const navigate = useNavigate(false);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const getUser = async () => {
+      const { data } = await supabase.auth.getUser();
+      setUser(data.user);
+    };
+
+    getUser();
+
+    const { data: listener } = supabase.auth.onAuthStateChange(
+      (_event, session) => {
+        setUser(session?.user || null);
+      }
+    );
+
+    return () => {
+      listener.subscription.unsubscribe();
+    };
+  }, []);
 
   const signOut = async () => {
     const { error } = await supabase.auth.signOut();
@@ -22,15 +43,30 @@ const SideBar = ({ isOpen, onClose }) => {
       >
         <aside className="flex flex-col justify-between gap-8 bg-background-secondary  w-80 p-4 overflow-hidden rounded-lg ">
           <section>
-            <div className="logo flex items-center gap-4 mb-8">
-              <h1 className="flex items-center justify-center w-10 h-10 bg-indigo-500 p-2 rounded-xl font-extrabold text-white">
+            <div className="logo flex items-center gap-4 mb-8 ">
+              <h1 className="flex items-center justify-center w-10 h-10 bg-green-600 p-2 rounded-xl font-extrabold text-white">
                 UI
               </h1>
               <div className="flex gap-10">
                 <div>
-                  <h3 className="font-bold text-indigo-500">ElementumUI</h3>
-                  <p className="text-xs text-muted-foreground">
-                    Diseño UI de componentes
+                  <h3 className="font-bold text-green-600">
+                    {user ? (
+                      <span className="">
+                        <img
+                          src="https://cdn-icons-png.flaticon.com/128/5582/5582872.png"
+                          alt="User"
+                          className="inline-block w-6 h-6 rounded-full mr-2 object-cover ring-2 ring-green-600"
+                        />
+                        {user.email.split("@gmail.com")}
+                      </span>
+                    ) : (
+                      <span className="text-xs text-gray-500">
+                        Please log in
+                      </span>
+                    )}
+                  </h3>
+                  <p className="text-xs text-muted-foreground pt-1">
+                    Do More. Think Less.
                   </p>
                 </div>
                 {isOpen && (
@@ -82,7 +118,7 @@ const SideBar = ({ isOpen, onClose }) => {
               </li>
             </ul>
             <hr className="my-8 border-gray-500" />
-            <h5 className="uppercase font-semibold text-xs text-indigo-600 tracking-[2px] mb-4">
+            <h5 className="uppercase font-semibold text-xs text-green-600 tracking-[2px] mb-4">
               Menu
             </h5>
             <ul>
@@ -114,7 +150,7 @@ const SideBar = ({ isOpen, onClose }) => {
                 </Link>
               </li>
             </ul>
-            <h5 className="uppercase font-semibold text-xs text-indigo-600 tracking-[2px] my-4">
+            <h5 className="uppercase font-semibold text-xs text-green-600 tracking-[2px] my-4">
               Proyectos
             </h5>
             <ul>
@@ -196,6 +232,11 @@ const SideBar = ({ isOpen, onClose }) => {
                 </a>
               </li>
             </ul>
+            <hr className="my-8 border-gray-500" />
+            <div className="text-xs text-gray-500">
+              <p>© 2025 Bribh93. All rights reserved.</p>
+              <p>Made with ❤️ by Bribh93</p>
+            </div>
           </section>
         </aside>
       </div>

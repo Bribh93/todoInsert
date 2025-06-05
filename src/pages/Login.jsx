@@ -25,7 +25,7 @@ const Login = () => {
     }
     if (data) {
       toast.success("Your account was created successfully");
-      navigate("/Dashboard");
+      navigate("/htmlpage");
       return null;
     }
   };

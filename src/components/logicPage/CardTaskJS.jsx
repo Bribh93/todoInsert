@@ -65,7 +65,7 @@ const CardTaskJs = () => {
           {task.map((tasks) => (
             <div
               key={tasks.id}
-              className="bg-background-secondary max-w-2xl mx-auto py-4 px-6 rounded-lg shadow-xl shadow-yellow-500/10 md:hover:shadow-amber-500/50 mb-16 relative md:hover:scale-105 transform transition duration-300"
+              className="bg-background-secondary max-w-2xl mx-auto py-4 px-6 rounded-lg shadow-xl shadow-yellow-500/10 md:hover:shadow-amber-500/50 mb-16 relative md:hover:scale-95 transform transition duration-300"
             >
               <div className="flex items-center justify-between ">
                 <time className="text-sm text-muted-foreground">

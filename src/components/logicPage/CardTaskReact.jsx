@@ -65,7 +65,7 @@ const CardTaskReact = () => {
           {task.map((tasks) => (
             <div
               key={tasks.id}
-              className="bg-background-secondary max-w-2xl mx-auto py-4 px-6 rounded-lg shadow-xl shadow-blue-400/10 md:hover:shadow-blue-400/50 mb-16 relative transform transition md:hover:scale-105 duration-300"
+              className="bg-background-secondary max-w-2xl mx-auto py-4 px-6 rounded-lg shadow-xl shadow-blue-400/10 md:hover:shadow-blue-400/50 mb-16 relative transform transition md:hover:scale-95 duration-300"
             >
               <div className="flex items-center justify-between">
                 <time className="text-sm text-muted-foreground">

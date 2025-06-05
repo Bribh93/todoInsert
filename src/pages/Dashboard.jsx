@@ -30,7 +30,7 @@ const Dashboard = () => {
     <>
       <div className="md:flex justify-between items-center mb-4 px-4  text-green-600 w-[80%] mx-auto ">
         <h1 className="text-xl">Dashboard</h1>
-        <p className="text-gray-500 text-sm">Bienvenido  <span className="text-xl text-green-600">😁 {user.email.split("@gmail.com")} ✌️</span></p>
+        <p className="text-gray-500 text-sm">Admin  <span className="text-xl text-green-600">😁 {user.email.split("@gmail.com")} ✌️</span></p>
       </div>
       <DashboardCard />
       <Toaster

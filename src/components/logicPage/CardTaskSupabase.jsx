@@ -65,7 +65,7 @@ const CardTaskSupabase = () => {
           {task.map((tasks) => (
             <div
               key={tasks.id}
-              className="bg-background-secondary max-w-2xl mx-auto py-4 px-6 rounded-lg shadow-xl shadow-green-600/10 md:hover:shadow-green-600/50 mb-16 relative transform transition md:hover:scale-105 duration-300"
+              className="bg-background-secondary max-w-2xl mx-auto py-4 px-6 rounded-lg shadow-xl shadow-green-600/10 md:hover:shadow-green-600/50 mb-16 relative transform transition md:hover:scale-95 duration-300"
             >
               <div className="flex items-center justify-between ">
                 <time className="text-sm text-muted-foreground">
